@@ -13,13 +13,11 @@ int main ()
 
 	cmd = "START";
 	i = 0;
-	while (cmd != "E")
+	while ((cmd != "EXIT") && (cmd != "E"))
 	{
   		cout << "Enter your command: (A)DD, (S)EARCH, or (E)XIT : ";
   		getline(cin, cmd);
-  		string action1 = "A";
-		string action2 = "S";
-		if(cmd == action1)
+		if ((cmd == "ADD")  || (cmd == "A"))
 		{
 			if (i == 8)
 			{ 
@@ -34,7 +32,7 @@ int main ()
 				i++;
 			}
 		}
-		while (cmd == action2)
+		while ((cmd == "SEARCH") || (cmd == "S"))
 		{
 			printf("%-10.10s", "Index");
 			printf("|%-10.10s", "First Name");

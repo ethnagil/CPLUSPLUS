@@ -1,7 +1,4 @@
-// setiosflags example
 #include "phony.h"
-
-// int	Entry::_nbrows = 0;
 
 std::string Entry::ft_enter(std::string prompt)
 {
@@ -14,6 +11,7 @@ std::string Entry::ft_enter(std::string prompt)
 
 Entry::Entry (){
 }
+
 Entry::Entry (int n)
 {
 	m_index = n;
@@ -36,12 +34,6 @@ void	Entry::ft_print_header(std::string str)
 				str[9] = '.';
 	printf("|%-10.10s", str.c_str());
 }
-
-// void	Entry::ft_add_entry()
-// {
-// 	Entry row;
-// 	Entry::_nbrows += 1;
-// }
 
 void	Entry::ft_list_entry()
 {
