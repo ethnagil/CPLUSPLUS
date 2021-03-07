@@ -1,26 +1,14 @@
 #include <iostream>
-#include "Personnage.h" //Ne pas oublier
-
-using namespace std;
+#include "HumanA.hpp"
 
 int main()
 {
-    Personnage david, goliath("Épée aiguisée", 20);
-//	Personnage ethna(goliath);
-    //Création de 2 objets de type Personnage : david et goliath
+    Weapon club("crude spiked club");
+    HumanA Bob("Bob", club);
 
-    goliath.attaquer(david); //goliath attaque david
-    david.boirePotionDeVie(20); //david récupère 20 de vie en buvant une potion
-    goliath.attaquer(david); //goliath réattaque david
-    david.attaquer(goliath); //david contre-attaque... c'est assez clair non ? 
-    goliath.changerArme("Double hache tranchante vénéneuse de la mort", 40);
-    goliath.attaquer(david);
-
-    //Temps mort ! Voyons voir la vie de chacun…
-    cout << "David" << endl;
-    david.afficherEtat();
-    cout << endl << "Goliath" << endl;
-    goliath.afficherEtat();
+    Bob.HumanA::attack();
+    club.Weapon::setType("baseball bat");
+    Bob.HumanA::attack();
 
     return 0;
 }
