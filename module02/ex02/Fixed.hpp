@@ -23,9 +23,28 @@ public:
 	Fixed( int n );
 	Fixed( float n );
 	Fixed( void );
-	Fixed( Fixed const & cp);
+	Fixed( Fixed const &rhs);
 	~Fixed( void );
-	Fixed& operator=( Fixed const &cp);
+
+	bool operator>( Fixed const &rhs) const;
+	bool operator<( Fixed const &rhs) const;
+	bool operator>=( Fixed const &rhs) const;
+	bool operator<=( Fixed const &rhs) const;
+	bool operator==( Fixed const &rhs) const;
+	bool operator!=( Fixed const &rhs) const;
+
+	Fixed &operator=( Fixed const &rhs);
+	Fixed operator+( Fixed const &rhs);
+	Fixed operator-( Fixed const &rhs);
+	Fixed operator*( Fixed const &rhs);
+	Fixed operator/( Fixed const &rhs);
+
+	Fixed	&operator++();
+	Fixed	operator++(int);
+	Fixed	&operator--();
+	Fixed	operator--(int);
+
+	
 
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );

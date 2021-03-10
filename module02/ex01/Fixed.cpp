@@ -12,10 +12,16 @@
 
 #include "Fixed.hpp"
 
+// Constructor and Destructor
 Fixed::Fixed( int n )
 {
-	std::cout << "Constructor function called" << std::endl;
-	m_fpvalue = n;
+	std::cout << "Constructor int function called" << std::endl;
+	m_fpvalue = n << m_fractionalBits;
+}
+Fixed::Fixed( float n )
+{
+	std::cout << "Constructor float function called" << std::endl;
+	m_fpvalue = (int)roundf(n * (1 << m_fractionalBits));
 }
 Fixed::Fixed( void )
 {
@@ -34,21 +40,41 @@ Fixed::~Fixed( void )
 	std::cout << "Destructor function called" << std::endl;
 }
 
+// Transformation operators
+
+float	Fixed::toFloat(void) const
+{
+	return (m_fpvalue / (float)(1 << m_fractionalBits));
+}
+
+int		Fixed::toInt(void) const 
+{
+	return m_fpvalue >> m_fractionalBits;
+}
+
+// Getters and Setters
+
+void	Fixed::setRawBits( int const raw )
+{
+	std::cout << "Setting to raw value " << raw << std::endl;
+	this->m_fpvalue = raw;
+}
 int		Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (m_fpvalue);
 }
 
-Fixed	&Fixed::operator=( Fixed const &cp)
+// Assignment operator
+Fixed	&Fixed::operator=( Fixed const &rhs)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	this->m_fpvalue = cp.getRawBits();
+	this->m_fpvalue = rhs.getRawBits();
 	return (*this);
 }
 
-void	Fixed::setRawBits( int const raw )
+std::ostream	&operator<<( std::ostream &o, Fixed const &f )
 {
-	std::cout << "Setting to raw value " << raw << std::endl;
-	this->m_fpvalue = raw;
+	o << f.toFloat();
+	return (o);
 }
