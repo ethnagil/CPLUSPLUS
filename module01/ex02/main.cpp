@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/08 15:31:13 by egillesp          #+#    #+#             */
+/*   Updated: 2021/03/08 15:33:54 by egillesp         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 
@@ -13,17 +25,20 @@ int main()
 	unknown1.advert();
 	unknown2.advert();
 
-	std::cout << "A named Zombie created for the SCARY Event \n";
+	std::cout << "\n A named Zombie created on the heap for the SCARY Event \n";
 	scare.ZombieEvent::setZombieType("SCARY");
 	event1 = scare.ZombieEvent::newZombie("Harry");
 	event1->Zombie::advert();
 
-	std::cout << "a random Zombie created for the Event. Random Zombies disintegrate after their announcemant \n";
+	std::cout << "\nRandom Zombies created on the heap for the Event and are killed off after they announce themselves.\n";
+	scare.ZombieEvent::randomChump();
+	scare.ZombieEvent::randomChump();
+	scare.ZombieEvent::randomChump();
 	scare.ZombieEvent::randomChump();
 
 	delete event1; // Must delete the named Zombies
 
-	while (2) ;
+//	while (2) ;
 
 	return 0;
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/08 15:30:47 by egillesp          #+#    #+#             */
+/*   Updated: 2021/03/08 15:30:52 by egillesp         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 	#include "ZombieEvent.hpp"
 
 	ZombieEvent::ZombieEvent() { };
@@ -18,11 +30,19 @@
 	void	ZombieEvent::randomChump()
 	{
 		std::string names[] = {"Deady", "Grusome", "Headless", "Skeleton", "Scream"};
+		bool found = false;
+		int choice = 0;
 
 		Zombie *ptr_randy;
 
-		srand(time(NULL));
-		int choice = rand() % 5;
+		while (!found)
+		{
+			srand((unsigned int)time(NULL));
+			choice = rand() % 5;
+			if (this->m_lastname != names[choice])
+				found = true;
+		}	
+		this->m_lastname = names[choice];	
 		ptr_randy = ZombieEvent::newZombie(names[choice]);
 		ZombieEvent::announce(ptr_randy);
 	}
@@ -31,6 +51,6 @@
 	{
 		std::cout << "Here is a random Zombie...........\n";	
 		name->Zombie::advert();
-		std::cout << "Now he disintegrates...........\n";
+		std::cout << "...........Now he disintegrates...........\n";
 		delete name;
 	}

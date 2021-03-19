@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pony.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/08 15:27:56 by egillesp          #+#    #+#             */
+/*   Updated: 2021/03/08 15:27:58 by egillesp         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Pony.hpp"
 
 Pony::Pony ()
@@ -6,7 +18,7 @@ Pony::Pony ()
 	m_action = "Sleeping";
 }
 
-Pony::~Pony (){std::cout << m_name << " \e[91;4mdied\e[0m" <<std::endl;}
+Pony::~Pony (){Pony::~Pony (){std::cout << m_name << " \e[91;4mdied\e[0m" <<std::endl;}
 
 void	Pony::Alive()
 {

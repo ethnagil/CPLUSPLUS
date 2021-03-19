@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/08 15:57:24 by egillesp          #+#    #+#             */
+/*   Updated: 2021/03/08 15:58:03 by egillesp         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ZombieHorde.hpp"
+
 void zombieattack()
 {
 	std::cout << "\n First Zombie invasion - 10 Zombies \n";
@@ -12,7 +25,6 @@ void zombieattack()
 int main()
 {
 	zombieattack();
-//	while (2) ;
 
 	return 0;
 }

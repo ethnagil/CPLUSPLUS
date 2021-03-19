@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/08 16:13:29 by egillesp          #+#    #+#             */
+/*   Updated: 2021/03/08 16:13:33 by egillesp         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HUMAN_HPP
 #define HUMAN_HPP
 
@@ -13,7 +25,7 @@ class Human
 
 	Human();
 	~Human();
-	Brain const getBrain();
+	Brain const &getBrain();
 	std::string	identifier();
 
 	private:

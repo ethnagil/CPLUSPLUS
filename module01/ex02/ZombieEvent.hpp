@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/08 15:31:00 by egillesp          #+#    #+#             */
+/*   Updated: 2021/03/08 15:31:04 by egillesp         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ZOMBIEEVENT_HPP
 #define ZOMBIEEVENT_HPP
 
@@ -22,6 +34,7 @@ class ZombieEvent
 
 	std::string m_type;
 	std::string m_eventcry;
+	std::string m_lastname;
 };
 
 #endif
