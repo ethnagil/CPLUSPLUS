@@ -16,13 +16,33 @@
 Fixed::Fixed( int n )
 {
 	std::cout << "Constructor int function called" << std::endl;
-	m_fpvalue = n << m_fractionalBits;
+	if (n >= pow(2, (31 - m_fractionalBits)))
+	{
+		m_fpvalue = 0;
+		std::cout << "Value passed: "  << n 
+				<< " is too big, value set to 0. Maximum value : " 
+				<< int(pow(2, (31 - m_fractionalBits))) - 1 << '\n';
+	}
+	else
+		m_fpvalue = n << m_fractionalBits;
 }
+
 Fixed::Fixed( float n )
 {
 	std::cout << "Constructor float function called" << std::endl;
-	m_fpvalue = (int)roundf(n * (1 << m_fractionalBits));
+	if (n >= pow(2, (31 - m_fractionalBits)))
+	{
+		m_fpvalue = 0;
+		std::cout << "Value passed: "  << n 
+				<< " is too big, value set to 0. Maximum value : " 
+				<< int(pow(2, (31 - m_fractionalBits))) - 1 << '\n';
+	}
+	else
+	{
+		m_fpvalue = (int)roundf(n * (1 << m_fractionalBits));
+	}
 }
+
 Fixed::Fixed( void )
 {
 	std::cout << "Default constructor called" << std::endl;

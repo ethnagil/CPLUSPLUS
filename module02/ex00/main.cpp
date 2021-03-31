@@ -14,6 +14,7 @@
 #include <iostream>
 
 int main( void ) {
+	{
 	Fixed a;
 	Fixed b( a );
 	Fixed c;
@@ -23,5 +24,20 @@ int main( void ) {
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
+	}
+	{
+	std::cout << "\nExtra Tests\n";
+	std::cout << "\nFixed a(1); Fixed b(2); Fixed c(10);Fixed d(8388608);\n";
+
+	Fixed a(1);
+	Fixed b(2);
+	Fixed c(10);
+	Fixed d(8388608);
+
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	std::cout << d.getRawBits() << std::endl;	
+	}
 	return 0;
 }

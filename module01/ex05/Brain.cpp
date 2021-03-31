@@ -14,9 +14,16 @@
 
 Brain::Brain() { 
 	std::stringstream addr;
+	size_t i = 0;
 
 	addr << this;
 	this->m_brain_addr = addr.str();
+	while (i < m_brain_addr.length())	
+	{
+		if (isalpha(m_brain_addr[i]) && (m_brain_addr[i] != 'x'))
+			m_brain_addr[i] = toupper(m_brain_addr[i]);
+		i++;
+	}
 }
 	
 Brain::~Brain() { }

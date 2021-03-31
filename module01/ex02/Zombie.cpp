@@ -12,7 +12,7 @@
 
 	#include "Zombie.hpp"
 
-	Zombie::~Zombie() { }
+	Zombie::~Zombie() { std::cout << m_name << " \e[91;4mdied\e[0m" <<std::endl;}
 
 	void		Zombie::advert()
 	{

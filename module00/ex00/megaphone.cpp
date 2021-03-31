@@ -11,21 +11,26 @@
 /* ************************************************************************** */
 
 #include <iostream>
-
-using namespace std;
+#include <cctype>
 
 int main(int c, char **s)
 {
-	int i;
+	int i = 1;
+	int j;
 
-	i = 1;
 	while (i < c)
 	{
-		cout << s[i];
-		i++;	
+		j = 0;
+		while (j < (int)strlen(s[i]))
+		{
+			s[i][j] = toupper(s[i][j]);
+			j++;
+		}
+		std::cout << s[i];
+		i++;
 	}
 	if (c == 1)
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	cout << "\n";
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	std::cout << "\n";
 	return (0);
 }

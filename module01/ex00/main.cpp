@@ -24,6 +24,7 @@ void	ponyOnTheHeap()
 		Pony *heapy = new Pony("Heapy", "Sleeping");
 		heapy->Pony::Alive();
 		heapy->Pony::Action();
+		std::cout << "Heapy" << " on the heap must be killed ! \n";
 		delete heapy;
 		heapy = NULL;
 		std::cout << "Heapy" << " is dead! \n";
@@ -39,7 +40,7 @@ int main ()
 	std::cout << "Create Pony on the Heap." << '\n';
 	ponyOnTheHeap();
 	heapy.Pony::Alive();
-	std::cout << "Magic..previous pony Heapy initialised as Newpony is still alive!";
+	std::cout << "Magic..previous pony Heapy initialised as Newpony is still alive! \n";
 
   return 0;
 }

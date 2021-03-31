@@ -15,7 +15,15 @@
 Fixed::Fixed( int n )
 {
 	std::cout << "Constructor function called" << std::endl;
-	m_fpvalue = n;
+	if (n >= pow(2, (31 - m_fractionalBits)))
+	{
+		m_fpvalue = 0;
+		std::cout << "Value passed: "  << n 
+				<< " is too big, value set to 0. Maximum value : " 
+				<< int(pow(2, (31 - m_fractionalBits))) - 1 << '\n';
+	}
+	else
+		m_fpvalue = n << m_fractionalBits;
 }
 Fixed::Fixed( void )
 {

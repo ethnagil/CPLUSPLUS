@@ -18,7 +18,7 @@ Pony::Pony ()
 	m_action = "Sleeping";
 }
 
-Pony::~Pony (){Pony::~Pony (){std::cout << m_name << " \e[91;4mdied\e[0m" <<std::endl;}
+Pony::~Pony () {std::cout << m_name << " \e[91;4mdied\e[0m" <<std::endl;}
 
 void	Pony::Alive()
 {

@@ -12,7 +12,16 @@
 
 #include <iostream>
 #include <fstream>  
-#include <regex>
+
+void findAndReplaceAll(std::string & data, std::string toSearch, std::string replaceStr)
+{
+    size_t pos = data.find(toSearch);
+    while( pos != std::string::npos)
+    {
+        data.replace(pos, toSearch.size(), replaceStr);
+        pos =data.find(toSearch, pos + replaceStr.size());
+    }
+}
 
 int	main(int n, char *s[])
 {
@@ -36,8 +45,8 @@ int	main(int n, char *s[])
 		std::ofstream outfile (fout);
 		if (outfile.is_open()) {
 			while (std::getline(myfile, line)){
-				outfile << std::regex_replace(line, std::regex(s1), s2);
-				outfile << '\n';
+				findAndReplaceAll(line, s1, s2);		
+				outfile << line << '\n';
 			}
 			outfile.close();
 		}

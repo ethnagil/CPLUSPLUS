@@ -27,7 +27,7 @@ class ZombieHorde
 	~ZombieHorde();
 	Zombie * 	newZombie(std::string	name);
 	void		setZombieType(std::string type);
-	std::string	randomChump();
+	std::string	randomChump(int i);
 	void		announce();
 	
 	private:

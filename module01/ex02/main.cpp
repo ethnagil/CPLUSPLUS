@@ -25,7 +25,7 @@ int main()
 	unknown1.advert();
 	unknown2.advert();
 
-	std::cout << "\n A named Zombie created on the heap for the SCARY Event \n";
+	std::cout << "\n A named Zombie Harry created on the heap for the SCARY Event \n";
 	scare.ZombieEvent::setZombieType("SCARY");
 	event1 = scare.ZombieEvent::newZombie("Harry");
 	event1->Zombie::advert();
@@ -36,9 +36,8 @@ int main()
 	scare.ZombieEvent::randomChump();
 	scare.ZombieEvent::randomChump();
 
+	std::cout << "\nNow we must kill the named zombie Harry\n";
 	delete event1; // Must delete the named Zombies
-
-//	while (2) ;
-
+	std::cout << "\nThe stack zombies will be automatically killed on leaving\n";
 	return 0;
 }

@@ -32,10 +32,6 @@ int main()
 
         club.setType("baseball bat");
         Jim.attack();
-
-// to show that we need to redo setWeapon to change the pointer to the new weapon
-//        Jim.setWeapon(club);     
-//        Jim.attack();
     }
     return 0;
 }

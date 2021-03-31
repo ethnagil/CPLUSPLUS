@@ -19,7 +19,7 @@
 
 		while (i < n)
 		{
-			this->m_critter[i].setName(this->randomChump());
+			this->m_critter[i].setName(this->randomChump(i));
 			i++;
 		}
 	}
@@ -37,17 +37,16 @@
 		this->m_critter = nullptr;
 	}
 
-	std::string	 ZombieHorde::randomChump()
+	std::string	 ZombieHorde::randomChump(int i)
 	{
-		std::string names[] = {"Deady", "Grusome", "Headless", "Skeleton", "Scream", "Creepy"};
+		std::string names[] = {"Deady", "Grusome", "Headless", "Skeleton", "Scream", "Creepy", "Weepy"};
 		bool found = false;
 		int choice = 0;
 
 		while (!found)
 		{
-			srand((unsigned int)time(NULL));
-			choice = (rand() % 5);
-//			std::cout << this->m_lastname << '\n';
+			srand((unsigned int)time(NULL) * i);
+			choice = (rand() % 6);
 			if (this->m_lastname != names[choice])
 				found = true;
 		}
